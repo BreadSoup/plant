@@ -25,7 +25,7 @@ basic.forever(function () {
     pins.digitalWritePin(DigitalPin.P1, 0)
     average_noise = total_noise / 50
     serial.writeValue("average_noise", average_noise)
-    if (average_noise <= 175) {
+    if (average_noise <= 250) {
         alarm_latched = true
     }
     basic.pause(20000)
@@ -93,8 +93,8 @@ basic.forever(function () {
         }
     }
     if (pins.analogReadPin(AnalogReadWritePin.P0) < 400) {
-        for (let column = 0; column <= 4; column++) {
-            led.plot(2, column)
+        for (let column2 = 0; column2 <= 4; column2++) {
+            led.plot(2, column2)
         }
     }
     basic.pause(100)
